@@ -1,4 +1,3 @@
-# Level up
 Geschenk: Diese Domain gehört dir!
 ## yeah
 ![Alt Text](https://media.giphy.com/media/PqxasEYcJfyyVrsp6X/giphy.gif)
