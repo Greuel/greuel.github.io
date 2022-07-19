@@ -21,9 +21,9 @@
 title: Happy Birthday Finn
 email: birthday@finnsachse.de
 description: >- # this means to ignore newlines until "baseurl:"
-  Awesome description for your new birthday site. Die domain gehört
-  dir für mindestens ein Jahr. Hier kannst du mit dem coden starten.
-  Ich zeige dir github & Co. Viel Spaß :)
+  Happy Birthday!
+  Diese Domain gehört dir für mindestens ein Jahr. Hier kannst du mit dem Coden starten.
+  Viel Spaß :)
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: jekyllrb
