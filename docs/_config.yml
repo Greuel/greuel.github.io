@@ -31,7 +31,7 @@ twitter_username: jekyllrb
 github_username:  greuel
 
 # Build settings
-theme: Hacker
+theme: minimal
 plugins:
   - jekyll-feed
 
