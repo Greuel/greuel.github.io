@@ -10,7 +10,7 @@
   }
   header {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
   }
   h1 {
     font-size: 3em;
@@ -19,6 +19,13 @@
   main {
     max-width: 800px;
     margin: 0 auto;
+    padding: 10px; /* Adjusted padding, if needed */
+  }
+  section {
+    max-width: 650px;
+    padding: 10px 0px 10px 0px;
+    margin: 10px 0;
+    margin-top: 20px;
   }
   code {
     background-color: #2a2a2a;
@@ -115,7 +122,6 @@
       <h2>Welcome to NeinCoded</h2>
       <p>Are you tired of programming languages that actually do things? Frustrated by code that works? Look no further! NeinCoded is here to revolutionize the way you don't program.</p>
     </section>
-
     <section id="features">
       <h2>Key Features</h2>
       <div class="feature-grid">
@@ -141,7 +147,6 @@
         </div>
       </div>
     </section>
-
     <section id="how-it-works">
       <h2>How It Works</h2>
       <p>NeinCoded is simple. No matter what you type, the output is almost always the same:</p>
@@ -156,7 +161,6 @@
         </code>
       </div>
     </section>
-
     <section>
       <h2>Why Choose NeinCoded?</h2>
       <ul>
@@ -166,14 +170,12 @@
         <li>Excellent tool for teaching the futility of existence</li>
       </ul>
     </section>
-
     <section id="get-started">
       <h2>Get Started</h2>
       <p>Ready to embrace the power of doing absolutely nothing? Download NeinCoded now and start not-coding today!</p>
       <a href="https://greuel.github.io/download" class="button">Download NeinCoded</a>
     </section>
   </main>
-
   <footer>
     <p>&copy; 2024 NeinCoded. All rights reserved (but it doesn't matter because Nein).</p>
   </footer>
