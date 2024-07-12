@@ -177,9 +177,9 @@ Type any command and press Enter to see the magic happen!</div>
     let neinCount = 0;
     const neinCounter = document.getElementById('nein-counter');
     let nineCount = 0;
-    const nineCounter = document.createElement('div');
+    const nineCounter = document.getElementById('nine-counter');
     let moinCount = 0;
-    const moinCounter = document.createElement('div');
+    const moinCounter = document.getElementById('moin-counter');
 
     function isIntegerOperation(command) {
       return /^\d+(\s*[\+\-\*\/]\s*\d+)*$/.test(command) || 
@@ -222,7 +222,7 @@ Type any command and press Enter to see the magic happen!</div>
             }, 2000);
           }, 1000);
         }
-        // additional easter egg: activate Ja mode and output a jumping pop up for 5 sec saying "srsly?! NEIN!"
+        // additional easter egg: activate Ja mode
         if (command.toLowerCase().includes('ja')) {
           const jaPopup = document.createElement('div');
           jaPopup.textContent = 'srsly?! NEIN!';
