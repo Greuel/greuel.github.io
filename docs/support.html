@@ -1,0 +1,195 @@
+<html><head><base href="https://greuel.github.io/support"><title>NeinCoded Support - We're Here to Not Help</title>
+<style>
+  body {
+    font-family: 'Courier New', monospace;
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+  }
+  header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  h1 {
+    font-size: 2.5em;
+    color: #ff4136;
+  }
+  main {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .support-item {
+    background-color: #2a2a2a;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+  }
+  .support-item h2 {
+    color: #ff4136;
+    margin-top: 0;
+  }
+  .button {
+    display: inline-block;
+    background-color: #ff4136;
+    color: #ffffff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  .button:hover {
+    background-color: #e60000;
+  }
+  footer {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #444;
+  }
+  #chat-window {
+    height: 300px;
+    border: 1px solid #444;
+    padding: 10px;
+    overflow-y: scroll;
+    margin-bottom: 10px;
+  }
+  #chat-input {
+    width: 80%;
+    padding: 5px;
+    background-color: #2a2a2a;
+    color: #e0e0e0;
+    border: 1px solid #444;
+  }
+  #chat-submit {
+    width: 18%;
+    padding: 5px;
+    background-color: #ff4136;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+  }
+  .chat-message {
+    margin-bottom: 10px;
+  }
+  .user-message {
+    text-align: right;
+    color: #ff4136;
+  }
+  .support-message {
+    text-align: left;
+    color: #4caf50;
+  }
+</style>
+</head>
+<body>
+  <header>
+    <h1>NeinCoded Support</h1>
+    <p>We're here to not help you with all your non-issues!</p>
+  </header>
+
+  <main>
+    <section class="support-item">
+      <h2>Frequently Unanswered Questions (FUQs)</h2>
+      <ul>
+        <li>Q: How do I start using NeinCoded?<br>A: Nein.</li>
+        <li>Q: Is there any documentation available?<br>A: Nein.</li>
+        <li>Q: Can I contribute to the project?<br>A: Nein.</li>
+        <li>Q: What's the best way to debug my NeinCoded program?<br>A: Nein.</li>
+        <li>Q: Are there any plans for future updates?<br>A: Nein.</li>
+      </ul>
+    </section>
+
+    <section class="support-item">
+      <h2>Live Chat Support</h2>
+      <p>Experience our cutting-edge AI-powered support system that's guaranteed to solve none of your problems!</p>
+      <div id="chat-window"></div>
+      <input type="text" id="chat-input" placeholder="Type your question here...">
+      <button id="chat-submit">Send</button>
+    </section>
+
+    <section class="support-item">
+      <h2>Error Code Directory</h2>
+      <p>All NeinCoded error codes and their meanings:</p>
+      <ul>
+        <li>Error 0: Nein</li>
+        <li>Error 1: Nein</li>
+        <li>Error 2: Nein</li>
+        <li>Error 3: Nein</li>
+        <li>Error 4: Nein</li>
+        <li>...</li>
+      </ul>
+    </section>
+
+    <section class="support-item">
+      <h2>Contact Us</h2>
+      <p>Need personalized non-assistance? Reach out to our team of expert non-helpers!</p>
+      <form id="contact-form">
+        <input type="text" placeholder="Your Name" required><br>
+        <input type="email" placeholder="Your Email" required><br>
+        <textarea placeholder="Your Message" required></textarea><br>
+        <button type="submit" class="button">Submit (but don't expect a response)</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 NeinCoded. All rights unreserved (because Nein).</p>
+    <p><a href="https://greuel.github.io">Home</a> | <a href="https://ngreuel.github.io/download">Download</a></p>
+  </footer>
+
+  <script>
+    const chatWindow = document.getElementById('chat-window');
+    const chatInput = document.getElementById('chat-input');
+    const chatSubmit = document.getElementById('chat-submit');
+    const contactForm = document.getElementById('contact-form');
+
+    function addMessage(message, isUser = false) {
+      const messageElement = document.createElement('div');
+      messageElement.classList.add('chat-message');
+      messageElement.classList.add(isUser ? 'user-message' : 'support-message');
+      messageElement.textContent = message;
+      chatWindow.appendChild(messageElement);
+      chatWindow.scrollTop = chatWindow.scrollHeight;
+    }
+
+    chatSubmit.addEventListener('click', () => {
+      const userMessage = chatInput.value.trim();
+      if (userMessage) {
+        addMessage(userMessage, true);
+        chatInput.value = '';
+        setTimeout(() => {
+          addMessage('Nein.');
+        }, 1000);
+      }
+    });
+
+    chatInput.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
+        chatSubmit.click();
+      }
+    });
+
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      alert('Your message has been successfully not sent!');
+      contactForm.reset();
+    });
+
+    // Easter egg
+    let neinCount = 0;
+    document.addEventListener('keydown', (e) => {
+      if (e.key.toLowerCase() === 'n') {
+        neinCount++;
+        if (neinCount === 9) {
+          document.body.style.fontFamily = 'Comic Sans MS, cursive';
+          alert("Congratulations! You've unlocked the secret 'Ja' mode. But Nein, it still doesn't help.");
+          neinCount = 0;
+        }
+      } else {
+        neinCount = 0;
+      }
+    });
+  </script>
+</body></html>

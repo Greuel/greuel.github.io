@@ -107,6 +107,7 @@
   <nav>
     <a href="/try-it">Try It</a>
     <a href="/download">Download</a>
+    <a href="/support">Support</a>
   </nav>
 
   <main>
