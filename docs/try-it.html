@@ -1,0 +1,248 @@
+<html><head><base href="https://greuel.github.io/try-it.html"><title>NeinCoded - Try the Ultimate Anti-Programming Language</title>
+<style>
+  body {
+    font-family: 'Courier New', monospace;
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  header {
+    background-color: #ff4136;
+    color: #ffffff;
+    text-align: center;
+    padding: 1em 0;
+  }
+  h1 {
+    font-size: 2.5em;
+    margin: 0;
+  }
+  main {
+    flex-grow: 1;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #console {
+    width: 100%;
+    height: 400px;
+    background-color: #000000;
+    color: #00ff00;
+    font-family: monospace;
+    padding: 1em;
+    border-radius: 5px;
+    overflow-y: auto;
+    margin-top: 2em;
+    display: flex;
+    flex-direction: column;
+  }
+  #output {
+    flex-grow: 1;
+    overflow-y: auto;
+  }
+  #input-line {
+    display: flex;
+    align-items: center;
+  }
+  #input {
+    background-color: transparent;
+    border: none;
+    color: #00ff00;
+    font-family: monospace;
+    width: 100%;
+    outline: none;
+  }
+  .feature {
+    background-color: #2a2a2a;
+    padding: 1em;
+    margin: 1em 0;
+    border-radius: 5px;
+    width: 100%;
+  }
+  footer {
+    background-color: #2a2a2a;
+    color: #ffffff;
+    text-align: center;
+    padding: 1em 0;
+    width: 100%;
+  }
+  .nein-animation {
+    font-size: 2em;
+    font-weight: bold;
+    color: #ff4136;
+    animation: neinPulse 2s infinite;
+  }
+  @keyframes neinPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+  }
+  .nine-animation {
+    font-size: 2em;
+    font-weight: bold;
+    color: #ff4136;
+    animation: ninePulse 2s infinite;
+  }
+  @keyframes ninePulse {
+    0% { transform: scale(1) rotate(0deg); }
+    50% { transform: scale(1.1) rotate(180deg); }
+    100% { transform: scale(1) rotate(360deg); }
+  }
+  #nein-counter {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background-color: #000000;
+    color: #ffffff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.9em;
+  }
+  #nine-counter {
+    position: fixed;
+    top: 40px;
+    right: 10px;
+    background-color: #000000;
+    color: #ffffff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.9em;
+  }
+  #moin-counter {
+    position: fixed;
+    top: 70px;
+    right: 10px;
+    background-color: #000000;
+    color: #ffffff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.9em;
+  }
+</style>
+</head>
+<body>
+  <div id="nein-counter">Neins: 0</div>
+  <div id="nine-counter">Nines: 0</div>
+  <div id="moin-counter">Moins: 0</div>
+  <header>
+    <h1>Try NeinCoded</h1>
+    <p>Experience the Future of Non-Programming</p>
+  </header>
+
+  <main>
+    <section id="try-it">
+      <h2>NeinCoded Interactive Console</h2>
+      <p>Type any command and witness the power of NeinCoded in action!</p>
+      <div id="console">
+        <div id="output">Welcome to NeinCoded v0.0.0
+Type any command and press Enter to see the magic happen!</div>
+        <div id="input-line">
+          &gt; <input type="text" id="input" autofocus>
+        </div>
+      </div>
+    </section>
+
+    <section id="features">
+      <h2>Why Try NeinCoded?</h2>
+      <div class="feature">
+        <h3>Instant Mastery</h3>
+        <p>Become a NeinCoded expert in seconds! No learning curve, no tutorials needed.</p>
+      </div>
+      <div class="feature">
+        <h3>Predictable Results</h3>
+        <p>Say goodbye to unexpected outputs. With NeinCoded, you always know what you're going to get.</p>
+      </div>
+      <div class="feature">
+        <h3>Unmatched Efficiency</h3>
+        <p>Why waste time writing complex algorithms when you can achieve nothing with just one word?</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2023 NeinCoded. All rights reserved (but it doesn't matter because Nein).</p>
+    <p><a href="https://greuel.github.io">Home</a> | <a href="https://greuel.github.io/download.html">Download</a></p>
+  </footer>
+
+  <script>
+    const input = document.getElementById('input');
+    const output = document.getElementById('output');
+    let neinCount = 0;
+    const neinCounter = document.getElementById('nein-counter');
+    let nineCount = 0;
+    const nineCounter = document.createElement('div');
+    let moinCount = 0;
+    const moinCounter = document.createElement('div');
+
+    function isIntegerOperation(command) {
+      return /^\d+(\s*[\+\-\*\/]\s*\d+)*$/.test(command) || 
+             /^toInt\(.+\)$/.test(command) ||
+             /^\d+$/.test(command);
+    }
+
+    function isHelloWorld(command) {
+      return /^hello\s*world$/i.test(command) || /^hello\s*,\s*world$/i.test(command);
+    }
+
+    input.addEventListener('keydown', function(event) {
+      if (event.key === 'Enter') {
+        event.preventDefault();
+        const command = input.value;
+        output.innerHTML += '<br>&gt; ' + command;
+        if (isIntegerOperation(command)) {
+          output.innerHTML += '<br><span class="nine-animation">9</span>';
+          nineCount++;
+          nineCounter.textContent = `Nines: ${nineCount}`;
+        } else if (isHelloWorld(command)) {
+          output.innerHTML += '<br>Moin!';
+          moinCount++;
+          moinCounter.textContent = `Moins: ${moinCount}`;
+        } else {
+          output.innerHTML += '<br><span class="nein-animation">Nein</span>';
+          neinCount++;
+          neinCounter.textContent = `Neins: ${neinCount}`;        
+        }
+        input.value = '';
+        output.scrollTop = output.scrollHeight;
+        
+        // Easter egg
+        if (command.toLowerCase().includes('meaning of life')) {
+          setTimeout(() => {
+            output.innerHTML += '<br><br>NeinCoded ponders existence for a moment...';
+            setTimeout(() => {
+              output.innerHTML += '<br>The meaning of life is... <span class="nine-animation">Nein</span>';
+              output.scrollTop = output.scrollHeight;
+            }, 2000);
+          }, 1000);
+        }
+        // additional easter egg: activate Ja mode and output a jumping pop up for 5 sec saying "srsly?! NEIN!"
+        if (command.toLowerCase().includes('ja')) {
+          const jaPopup = document.createElement('div');
+          jaPopup.textContent = 'srsly?! NEIN!';
+          jaPopup.style.position = 'fixed';
+          jaPopup.style.top = '50%';
+          jaPopup.style.left = '50%';
+          jaPopup.style.transform = 'translate(-50%, -50%)';
+          jaPopup.style.backgroundColor = '#ff4136';
+          jaPopup.style.color = '#ffffff';
+          jaPopup.style.padding = '10px 20px';
+          jaPopup.style.borderRadius = '5px';
+          jaPopup.style.zIndex = '9999';
+          document.body.appendChild(jaPopup);
+          setTimeout(() => {
+            jaPopup.remove();
+          }, 5000);
+        }
+
+      }
+    });
+</script>
+</body></html>
+
