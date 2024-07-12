@@ -21,6 +21,9 @@
     margin: 0 auto;
     padding: 10px; /* Adjusted padding, if needed */
   }
+  section #title {
+    margin-top: 40px;
+  }
   section {
     max-width: 650px;
     padding: 10px 0px 10px 0px;
