@@ -47,6 +47,8 @@
     background-color: #2a2a2a;
     padding: 1em 0;
     text-align: center;
+    display: flex;
+    justify-content: center;
   }
   nav a {
     color: #ffffff;
@@ -167,12 +169,12 @@
     <section id="get-started">
       <h2>Get Started</h2>
       <p>Ready to embrace the power of doing absolutely nothing? Download NeinCoded now and start not-coding today!</p>
-      <a href="https://neincoded.world/download" class="button">Download NeinCoded</a>
+      <a href="https://greuel.github.io/download" class="button">Download NeinCoded</a>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2023 NeinCoded. All rights reserved (but it doesn't matter because Nein).</p>
+    <p>&copy; 2024 NeinCoded. All rights reserved (but it doesn't matter because Nein).</p>
   </footer>
 </body></html>
 
